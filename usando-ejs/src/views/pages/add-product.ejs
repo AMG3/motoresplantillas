@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Producto</title>
+  </head>
+  <body>
+    <%- include('../partials/header')%>
+    <h1>Agregar Nuevo Producto</h1>
+    <form action="/products" method="post">
+      <label for="title">Título:</label>
+      <input type="text" placeholder="Nombre" name="title" />
+      <label for="price">Precio:</label>
+      <input type="number" placeholder="Precio" name="price" />
+      <label for="thumbnail">Imagen: </label>
+      <input type="text" placeholder="Imagen" name="thumbnail" />
+      <button>Agregar Producto</button>
+    </form>
+    <%- include('../partials/footer')%>
+  </body>
+</html>

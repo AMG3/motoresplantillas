@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>Lista de Productos</title>
+    <style>
+      img {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/header')%>
+    <h1>Tabla de Productos</h1>
+    <% if(productList.length > 0) {%>
+    <table>
+      <thead>
+        <th>Id</th>
+        <th>Título</th>
+        <th>Precio</th>
+        <th>Imagen</th>
+      </thead>
+      <tbody>
+        <% productList.forEach(function(product) { %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.title %></td>
+          <td><%= product.price %></td>
+          <td>
+            <img src="<%= product.thumbnail %>" alt="Imagen de producto" />
+          </td>
+        </tr>
+        <%}) %>
+      </tbody>
+    </table>
+    <%} else {%>
+    <p>No hay productos</p>
+    <%} %> <%- include('../partials/footer')%>
+  </body>
+</html>
