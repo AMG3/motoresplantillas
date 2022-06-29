@@ -1,6 +1,15 @@
-<h1>Lista de productos</h1>
+<h1>Lista de Productos</h1>
+ <style>
+      * {
+        font-family: "Lobster", cursive;
+      }
+      img {
+        width: 50px;
+      }
+    </style>
 {{#if productList.[0]}}
-  <table>
+<div class="table-responsive">
+  <table class="table table-light">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -15,11 +24,12 @@
           <td>{{this.id}}</td>
           <td>{{this.title}}</td>
           <td>{{this.price}}</td>
-          <td>{{this.thumbnail}}</td>
+          <td><img src="{{this.thumbnail}}" alt="imagen"></td>
         </tr>
       {{/each}}
     </tbody>
   </table>
+  </div>
 {{else}}
   <h2>No hay productos</h2>
 {{/if}}
