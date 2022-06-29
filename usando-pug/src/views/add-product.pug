@@ -4,15 +4,25 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        title Agregar productos
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet")
+        title Agregar Producto
+        style(type="text/css").
+            * {
+                font-family: "Lobster", cursive;
+            }
     body
-        a(href='/products-list') Ver lista
-        h1 Agregar Producto
+        nav
+            a(href='/' class="btn btn-light") Agregar Nuevo Producto
+            a(href='/products-list' class="btn btn-light") Ver lista
+        h1 Agregar Nuevo Producto
         form(action='/products' method='POST')
             label(for='title') Título:
-            input(type='text' name='title' required='')
+            input(type='text' name='title' required='' class="mx-2")
             label(for='price') Precio:
-            input(type='text' name='price' required='')
-            label(for='thumbnail') Thumbnail:
-            input(type='text' name='thumbnail' required='')
-            button(type='submit') Agregar producto
+            input(type='number' name='price' required='' class="mx-2")
+            label(for='thumbnail') Imagen:
+            input(type='text' name='thumbnail' required='' class="mx-2")
+            button(type='submit') Agregar Producto
